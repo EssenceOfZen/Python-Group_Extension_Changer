@@ -15,13 +15,16 @@
 
 
 import os
+from tkinter import filedialog
 import EssencePython
+from tkinter import *
 
 # Global Variables ===========================
-VERSION = "1.7.12" # A variable to call for showing update once menu is made
+VERSION = "1.9.00" # A variable to call for showing update once menu is made
 
 DIRECTORY = "" # used for the directory url location
 DIRECTORY_ITEMS = [] # This is an array to house the items inside the directory
+ROOT = Tk()
 
 # Functions ===========================
 def changeDirectory(): # Function allows to change the Directory
@@ -76,21 +79,36 @@ def updateDirectory(): # Updates the Directory with any changes that you've made
 
     DIRECTORY_ITEMS = os.listdir(DIRECTORY)
 
+def directoryDialog(root):
+    root.fileDirectory = filedialog.askdirectory()
+    return root.fileDirectory
+
+
 def menu(): # TODO: Finish this function
     pass
 
+# Tkinter functions ================================================================================================
+def initializeGUI():
+    pass
+
+
 # Main Function ====================================================================================================
 def main():
-    EssencePython.EoZ_Logo()
+    EssencePython.EoZ_Logo() # Calls our Console logo
 
+    # Pull down our global variables for the main function
     global DIRECTORY
     global DIRECTORY_ITEMS
+    global ROOT
     # Start the program by getting the directory
     # Later create a menu
 
     main_switch = 1
     while main_switch == 1:
-        changeDirectory()
+        changeDirectory() # Deprecated
+        #DIRECTORY = directoryDialog(ROOT)
+        #print(DIRECTORY)
+
         print()
 
         printDirectoryItems(DIRECTORY)
