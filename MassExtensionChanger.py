@@ -24,7 +24,7 @@ VERSION = "1.9.00" # A variable to call for showing update once menu is made
 
 DIRECTORY = "" # used for the directory url location
 DIRECTORY_ITEMS = [] # This is an array to house the items inside the directory
-ROOT = Tk()
+#ROOT = Tk()
 
 # Functions ===========================
 def changeDirectory(): # Function allows to change the Directory
@@ -79,9 +79,9 @@ def updateDirectory(): # Updates the Directory with any changes that you've made
 
     DIRECTORY_ITEMS = os.listdir(DIRECTORY)
 
-def directoryDialog(root):
-    root.fileDirectory = filedialog.askdirectory()
-    return root.fileDirectory
+#def directoryDialog(root):
+#    root.fileDirectory = filedialog.askdirectory()
+#    return root.fileDirectory
 
 
 def menu(): # TODO: Finish this function
